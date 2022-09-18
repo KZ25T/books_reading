@@ -22,3 +22,34 @@
 
 - 扩增变量内容：用`${变量}`或`"$变量名称"`表示。
 - 取消变量为`unset 变量名`
+- 使用ramdom获得0-9的数值
+  
+  ```bash
+  ➜  ~ declare -i number=$RANDOM*10/32768; echo $number
+  4
+  ```
+
+## 重要的变量
+
+- `PS1` 提示字符的设置
+- `$` 本shell的PID
+- `?` 上一个命令的返回值
+- `OSTYPE`，`HOSTTIPE`，`MACHTYPE` 表示主机硬件和内核的等级
+
+`export`可以将自定义变量转为环境变量，可以被子进程所继承。
+
+## 读入变量
+
+`read -[pt] variable`读入内容存入变量`variable`中。
+
+- `-p`后接提示字符
+- `-t`后接等待时间
+
+`declear`和`typeset`是一样的功能，就是声明变量的类型。
+
+- `declear -[aixr] variable`
+  - 其中a为数组
+  - i为整数
+  - x和export一样是定义为环境变量
+  - r定义为read-only且不可unset
+  - `-`改成`+`可以减去这个属性
