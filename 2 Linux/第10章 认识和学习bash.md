@@ -81,3 +81,4 @@
 
 - `login shell` ：取得bash时需要完整的登录流程
 - `non-login shell` ：取得bash不需要重复登录的操作
+- `source` 读入配置文件而不用重新登录
