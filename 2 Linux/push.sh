@@ -1,9 +1,9 @@
 #!/bin/bash
 
-if [ -z $1 ]; then
+if [ -z "$1" ]; then
 	read -p "input your commit log: " LOG
 else
-	LOG=$1
+	LOG="$1"
 fi
 
 ADD="git add ."
@@ -13,7 +13,7 @@ PUSH2="git push GITHUB"
 
 for cmds in "$ADD" "$COMMIT" "$PUSH1" "$PUSH2"
 do
-	if $cmds 2>/dev/null; then
+	if $cmds ; then
 		echo -e "\033[32msuccess:\033[0m $cmds"
 	else 
 		ERRVAL=$?
