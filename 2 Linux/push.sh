@@ -6,6 +6,8 @@ else
 	LOG="$1"
 fi
 
+LOG=$(echo $LOG | sed "s/\ /\\\ /g") # 替换掉空格
+
 ADD="git add ."
 COMMIT="git commit -m $LOG"
 PUSH1="git push origin"
